@@ -1,0 +1,146 @@
+:root {
+  --codeBackgroundColor: rgba(0, 22, 22, 0.459);
+}
+body {
+  color: #4d4e53;
+}
+h1 {
+  padding: 0;
+  margin: 0;
+  text-transform: uppercase;
+  text-align: center;
+}
+#topPage {
+  position: absolute;
+  left: 0px;
+  top: 0;
+}
+#navbar {
+  position: absolute;
+  left: 0px;
+  top: 0;
+  z-index: 1;
+  min-width: 290px;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-height: 275px;
+  border: none;
+}
+#navbar header {
+  text-align: center;
+}
+#navbar ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0.5rem;
+  list-style: none;
+}
+#navbar ul li {
+  text-align: center;
+  width: 7em;
+}
+#navbar a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: inherit;
+}
+.button-up {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 100;
+  box-sizing: border-box;
+  width: 1.2em;
+  height: 1.2em;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 0.85;
+  color: rgb(59, 122, 7);
+  font-size: 2em;
+  font-weight: 900;
+  background-color: rgba(160, 226, 105, 0.1);
+  border: solid 2px rgb(160, 226, 105);
+  border-radius: 50%;
+}
+#main-doc {
+  position: relative;
+  padding: 10px;
+  margin-bottom: 110px;
+  margin-left: 0px;
+  margin-top: 270px;
+
+  font-family: "Open Sans", Arial, sans-serif;
+  line-height: 1.5;
+}
+
+code {
+  padding: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: inherit;
+  overflow: auto;
+  font-size: 1.3em;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(255, 255, 255);
+  tab-size: 1.5em;
+  background: var(--codeBackgroundColor);
+  border-radius: 10px;
+}
+.block {
+  max-width: 40em;
+  color: rgb(255, 255, 255);
+  tab-size: 1.5em;
+  background: var(--codeBackgroundColor);
+  border-radius: 10px;
+}
+.block > code {
+  display: block;
+  font-size: 1em;
+}
+header {
+  font-weight: bold;
+  padding: 0.1em;
+}
+header + p {
+  font-weight: bold;
+}
+.reference a{
+  color: inherit;
+}
+footer p{
+  margin: 0;
+  margin-bottom: 0.5rem;
+  padding: 0;
+}
+@media screen and (min-width: 900px) {
+  #navbar {
+    position: fixed;
+    min-width: 290px;
+    width: 300px;
+    color: #4d4e53;
+    font-family: "Open Sans", Arial, sans-serif;
+    line-height: 1.5;
+  }
+  #main-doc {
+    margin-left: 310px;
+    padding: 20px;
+    padding-bottom: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
+    flex-grow: 1;
+    color: #4d4e53;
+    font-family: "Open Sans", Arial, sans-serif;
+    line-height: 1.5;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

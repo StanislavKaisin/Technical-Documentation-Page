@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Technical Documentation Page</title>
+</head>
+
+<body>
+  <div id="topPage"></div>
+  <nav id="navbar">
+    <header>TOP 10 JS INTERVIEW QUESTIONS</header>
+    <ul>
+      <li><a class='nav-link' href="#SUMMARY">SUMMARY</a></li>
+      <li><a class='nav-link' href="#question_1">Question 1</a></li>
+      <li><a class='nav-link' href="#question_2">Question 2</a></li>
+      <li><a class='nav-link' href="#question_3">Question 3</a></li>
+      <li><a class='nav-link' href="#question_4">Question 4</a></li>
+      <li><a class='nav-link' href="#question_5">Question 5</a></li>
+      <li><a class='nav-link' href="#question_6">Question 6</a></li>
+      <li><a class='nav-link' href="#question_7">Question 7</a></li>
+      <li><a class='nav-link' href="#question_8">Question 8</a></li>
+      <li><a class='nav-link' href="#question_9">Question 9</a></li>
+      <li><a class='nav-link' href="#question_10">Question 10</a></li>
+    </ul>
+  </nav>
+  <main id="main-doc">
+    <h1>Top 10 js interview questions</h1>
+    <section class="main-section" id="SUMMARY">
+      <header>Summary</header>
+      <ul>
+        <li>Question 1. What is the difference between <code>var</code> and <code>let</code> keywords?</li>
+        <li>Question 2. What is the difference between <code>==</code> and <code>===</code> signs?</li>
+        <li>Question 3. What is the difference between <code>let</code> and <code>const</code> keywords?</li>
+        <li>Question 4. What is the difference between <code>undefined</code> and <code>null</code> keywords?</li>
+        <li>Question 5. What is the use of Arrow function?</li>
+        <li>Question 6. What is prototypal inheritance?</li>
+        <li>Question 7. What is the difference between function declaration and function expression?</li>
+        <li>Question 8. What is promises and why do we use it?</li>
+        <li>Question 9. What is <code>setTimeout()</code>?</li>
+        <li>Question 10. What is closure and how do we use it?</li>
+
+      </ul>
+      <hr />
+    </section>
+    <section class="main-section" id="question_1">
+      <header>Question 1</header>
+      <p>What is the difference between <code>var</code> and <code>let</code> keywords?</p>
+      <p>1. <code>var</code> is in JS from the beginning. <code>let</code> was introduced in ES2015/ES6.</p>
+      <p>2. <code>let</code> has a block scope. <code>var</code> has a function scope.</p>
+      <p>3. <code>var</code> gets hoisted, which the following code explains.</p>
+      <div class="block">
+        <pre>
+
+        let x = function() {
+          if (true) {
+            console.log(v); // <i>undefined</i>
+            console.log(l); // <i>l is not defined</i>
+            var v = 2;
+            let l = 1;
+            console.log(l); // <i>1</i>
+          }
+           console.log(v); // <i>2</i>
+           console.log(l); // <i>l is not defined</i>
+        }
+        x();
+      </pre>
+      </div>
+      <hr />
+    </section>
+    <section class="main-section" id="question_2">
+      <header>Question 2</header>
+      <p>What is the difference between <code>==</code> and <code>===</code> signs?</p>
+      <p>1. <code>==</code> and <code>===</code> are both comparison operators.</p>
+      <p>2. <code>==</code> compares value only.</p>
+      <p>3. <code>===</code> compares value and type.</p>
+      <p>The following example explains the difference.</p>
+      <div class="block">
+        <pre>
+
+          '1' == 1 
+    //<i>true(both values convert to string type and compare;</i>
+    //<i>and the String '1' are equiv to String '1')</i>
+
+          '1' === 1 
+    // <i>false (compare first types;</i>
+    // <i>and the String type and Number type are not equiv)</i>
+      </pre>
+      </div>
+      <hr />
+    </section>
+    <section class="main-section" id="question_3">
+      <header>Question 3</header>
+      <p>What is the difference between <code>let</code> and <code>const</code> keywords?</p>
+      <p>1. <code>let</code> and <code>const</code> are both define variables.</p>
+      <p>2. <code>const</code> defines a variable, which value can not be re-assigned after first assignment.</p>
+      <p>3. The variable created with <code>let</code> keyword can change its value.</p>
+      <p>See the next example:</p>
+      <div class="block">
+        <pre>
+
+          let l = 1;
+          l = 2; 
+          console.log(l); // <i>2</i>
+ 
+          const c = 1;
+          c = 2; 
+          console.log(c); // <i>Uncaught TypeError:</i>
+          // <i>Assignment to constant variable</i>
+          const b; 
+          b = 1; 
+          console.log(b); // <i>Uncaught TypeError:</i>
+          // <i>Missing initializer in const declaration</i>
+          
+          // <i>But you can change values of objects</i>
+          const d = [1, 2];
+          d.push(3); 
+          console.log(d); // <i>[1, 2, 3]</i>
+          d = ['z', 'x'];
+          console.log(d); // <i>Uncaught TypeError:</i>
+          // <i>Assignment to constant variable</i>
+      </pre>
+      </div>
+      <hr />
+    </section>
+    <section class="main-section" id="question_4">
+      <header>Question 4</header>
+      <p>What is the difference between <code>undefined</code> and <code>null</code> keywords?</p>
+      <p>1. <code>undefined</code> and <code>null</code> are both represent empty values.</p>
+      <p>2. When you define a variable, but not assign a value, <code>undefined</code> is assigned to it automatically.
+        If you want to assign <code>null</code> empty value to a variable, you should do it manually. Of course you can
+        also assign empty value of <code>undefined</code> to a variable manually.</p>
+      <p>3. The significant difference between <code>undefined</code> and <code>null</code> are they types:</p>
+      <div class="block">
+        <pre>
+
+        typeof(undefined); // <i>undefined</i>
+
+        typeof(null); // <i>object</i>
+    </pre>
+      </div>
+      <hr />
+    </section>
+    <section class="main-section" id="question_5">
+      <header>Question 5</header>
+      <p>What is the use of Arrow function?</p>
+      <p>Arrow functions do not have their own <code>this</code> value. The value of <code>this</code> inside an arrow
+        function is always inherited from the enclosing scope. Consider the following example:</p>
+      <div class="block">
+        <pre>
+
+          const profile = {
+            firstName: "",
+            lastName: "",
+            setName: function (name) {
+              let splitName = function (n) {
+                let nameArray = n.split(" ");
+                this.firstName = nameArray[0];
+                this.lastName = nameArray[1];
+              };
+              splitName(name);
+            },
+          };
+          
+          profile.setName("john doe");
+          console.log(profile.firstName);//"", nothing ))
+          console.log(window.firstName);//"john"
+      </pre>
+      </div>
+      <p>This has happened because splitName function is not a constructor function and only sets <code>firstName</code>
+        and <code>lastName</code> to a <code>window</code> object.</p>
+      <p>But, if we replace ordinary function with an arrow function, it will get <code>this</code> from the
+        <code>profile</code> object.</p>
+      <div class="block">
+        <pre>
+
+          const profile = {
+            firstName: "",
+            lastName: "",
+            setName: function (name) {
+              let splitName = (n) => {
+                let nameArray = n.split(" ");
+                this.firstName = nameArray[0];
+                this.lastName = nameArray[1];
+              };
+              splitName(name);
+            },
+          };
+          
+          profile.setName("john doe");
+          console.log(profile.firstName);//"john"
+      </pre>
+      </div>
+      <p>Note, that arrow functions also do not have <code>arguments</code> array, and can not use as a constructor
+        function.</p>
+        <hr />
+    </section>
+    <section class="main-section" id="question_6">
+      <header>Question 6</header>
+      <p>What is prototypal inheritance?</p>
+      <p>Every object has a property called a prototype. This property contains methods that the object inherited from
+        the parent object. When you call some object`s method JS first search it from the own object`s properties and
+        then search it in the methods from the prototype.</p>
+      <p>The example of prototype inheritance:</p>
+      <div class="block">
+        <pre>
+
+          let Car = function (model) {
+            this.model = model;
+          };
+          Car.prototype.getModel = function () {
+            return this.model;
+          };
+          
+          let toyota = new Car("toyota");
+          console.log(toyota.getModel()); //"toyota"
+          
+          let opel = new Car("opel");
+          console.log(opel.getModel()); //"opel"
+      </pre>
+      </div>
+      <hr />
+    </section>
+    <section class="main-section" id="question_7">
+      <header>Question 7</header>
+      <p>What is the difference between function declaration and function expression?</p>
+      <p>First of all function declaration and function expression have different syntax. Function declaration declares
+        a named function when function expression assigns an anonymous function to a variable.</p>
+      <p>Function declaration is enabled in code between its declaration when function expression is not. Function
+        expression is assigned to the variable, so it behaves like a variable and has a variable scope as well. To see
+        this you can consider the following example:</p>
+      <div class="block">
+        <pre>
+
+          console.log(functionDeclaration());
+          //"Function Declaration"
+          console.log(functionExpression());
+
+          //Uncought ReferenceError: 
+          //functionExpression is not defined
+
+
+          function functionDeclaration() {
+            console.log('Function Declaration')
+          };
+
+          let functionExpression = function () {
+            console.log('Function Expression')
+          };
+      </pre>
+      </div>
+      <p>When you need to pass a function to another function, you can not use function declaration, but only a function
+        expression.</p>
+        <hr />
+    </section>
+    <section class="main-section" id="question_8">
+      <header>Question 8</header>
+      <p>What is promises and why do we use it?</p>
+      <p>A promise is an object that contains a result of the async operation. It accepts resolve and reject functions.
+        Resolve is the function that should be called when the promise executes successfully and reject is the function
+        that should be called when the promise encounters an error. The syntax of the promises looks like this:</p>
+      <div class="block">
+        <pre>
+
+          let p = new Promise(function (resolve, reject) {
+            let workDone = true; // some time consuming work
+            if (workDone) {
+              //invoke resolve function passed
+          
+              resolve('success promise completed')
+            }
+            else {
+              reject('ERROR , work could not be completed')
+            }
+          })
+      </pre>
+      </div>
+      <p>The promises provide you a great opportunity to avoid so-called "callbacks hell" when you need to pass a
+        callback function to be run after the execution of another function.</p>
+        <hr />
+    </section>
+    <section class="main-section" id="question_9">
+      <header>Question 9</header>
+      <p>What is <code>setTimeout()</code>?</p>
+      <p><code>setTimeout()</code> is one of the many timing events. The window object allows the execution of code at specified time intervals. This object has provided <code>setTimeout()</code> to execute a function after a certain amount of time. It takes two parameters as arguments. One is the function and the other is the time that specifies the interval after which the function should be executed. The trick is when you set 0 milliseconds to delay the execution, the callback function anyway will be placed in the queue and executed after all sync functions from the stack.</p>
+      <div class="block">
+        <pre>
+
+          setTimeout(() => {
+            console.log('a');//third
+          }, 0);
+
+          console.log('b');//first 
+          
+          console.log('c');//second
+      </pre>
+      </div>
+      <hr />
+    </section>
+    <section class="main-section" id="question_10">
+      <header>Question 10</header>
+      <p>What is closure and how do we use it?</p>
+      <p>A closure is the combination of a function and the lexical environment within which that function was declared. Example:</p>
+      <div class="block">
+        <pre>
+
+          let obj = function () {
+            let i = 0;
+            return {
+              // setI(k) getI() are the inner functiona, closures
+              setI(k) {
+                i = k;
+              },
+              getI() {
+                return i;
+              },
+            };
+          };
+          
+          let x = obj();
+          
+          x.setI(2);
+          console.log(x.getI()); //2
+          //x is an Object
+          //x.__proto__.[[Scopes]].Closures[0]={i:2}
+      </pre>
+      </div>
+      <p>Practical uses of the closures is emulating private methods. Languages such as Java provide the ability to declare methods private, meaning that they can only be called by other methods in the same class. JavaScript does not provide a native way of doing this, but it is possible to emulate private methods using closures. Example:</p>
+      <div class="block">
+        <pre>
+
+          const counter = (() => {
+            let privateCounter = 0;
+            let changeBy = (val) => (privateCounter += val);
+            return {
+              increment: () => changeBy(1),
+              decrement: () => changeBy(-1),
+              value: () => privateCounter,
+            };
+          })();
+
+          console.log(counter.value()); //0
+          counter.increment();
+          counter.increment();
+          console.log(counter.value()); //2
+          counter.decrement();
+          console.log(counter.value()); //1
+      </pre>
+      </div>
+      <hr />
+    </section>
+  </main>
+  <footer>
+    <p>For more information, please see this videos:</p>
+    <div class="reference"><a href="https://www.youtube.com/watch?v=oxoFVqetl1E" rel="noopener noreferrer"
+        target="_blank">Video by
+        <b>techsith</b></a></div>
+    <div class="reference"><a href="https://www.youtube.com/watch?v=yo3MJPcVJc8" rel="noopener noreferrer"
+        target="_blank">Video by
+        <b>techsith</b></a></div>
+  </footer>
+  <a href="#topPage" class="button-up">&uarr;</a>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  <script>
+    function A(name='name') { return new B(name); }
+    function B(name='name') { this.name=name }
+
+    let a = new A('a');
+    let b = new B('a');
+
+    console.log('a == b', a == b)
+    console.log('a=', a)
+    console.log('b=',b)
+
+  </script>
+</body>
+
+</html>
